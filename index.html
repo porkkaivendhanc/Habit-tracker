@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2 class="logo">⚡ Habit Tracker</h2>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Build Better Habits,<br><span class="highlight">Transform Your Life</span></h1>
+        <p>
+            Track daily habits with streak tracking, analytics, reminders, and calendar insights.
+            Completely offline-first and private.
+        </p>
+
+        <div class="hero-btns">
+            <button class="start-btn" onclick="scrollToTracker()">Start Tracking Now</button>
+            <button class="learn-btn">Learn More</button>
+        </div>
+    </section>
+
+    <!-- MAIN DASHBOARD -->
+    <section class="tracker" id="tracker">
+
+        <div class="section-title">Habit Tracker</div>
+        <p class="section-sub">Track daily habits, see your streaks, and stay motivated.</p>
+
+        <!-- ANALYTICS CARDS -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <p class="stat-title">Total Habits</p>
+                <h2 id="totalHabits">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p class="stat-title">Active Streaks</p>
+                <h2 id="activeStreaks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p class="stat-title">Longest Streak</p>
+                <h2 id="longestStreak">0 days</h2>
+            </div>
+        </div>
+
+        <!-- TOP STREAKS -->
+        <div class="top-streaks">
+            <h3>Top Streaks</h3>
+            <p id="topStreaksText">No active streaks yet. Keep checking in daily!</p>
+        </div>
+
+        <!-- HABITS LIST -->
+        <h3 class="today-title">Today's Habits</h3>
+        <div id="habitList" class="habit-list"></div>
+
+        <!-- ANALYTICS OVERVIEW -->
+        <h3 class="today-title">Analytics Overview</h3>
+        <div class="stats-grid">
+            <div class="stat-card small">
+                <p>Total Habits</p>
+                <h2 id="aTotal">0</h2>
+            </div>
+            <div class="stat-card small">
+                <p>Active Habits</p>
+                <h2 id="aActive">0</h2>
+            </div>
+            <div class="stat-card small">
+                <p>Total Completions</p>
+                <h2 id="aCompletions">0</h2>
+            </div>
+            <div class="stat-card small">
+                <p>Avg Completion</p>
+                <h2 id="aPercent">0%</h2>
+            </div>
+        </div>
+
+        <!-- ADD HABIT BUTTON -->
+        <button class="add-btn" id="addHabitBtn">+ Add Habit</button>
+    </section>
+
+    <!-- ADD HABIT POPUP -->
+    <div class="popup-bg" id="popupBg">
+        <div class="popup">
+            <h3>Add Habit</h3>
+            <input id="habitInput" type="text" placeholder="Habit name...">
+            <button id="saveHabit">Save</button>
+            <button id="cancelPopup">Cancel</button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
